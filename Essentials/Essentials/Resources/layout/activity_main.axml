@@ -7,13 +7,25 @@
 	android:layout_height="match_parent"
 	android:minWidth="25px"
 	android:minHeight="25px">
-	<LinearLayout
+	<ScrollView
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/scrollView1">
+		<LinearLayout
 		android:orientation="vertical"
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:layout_width="384.0dp"
 		android:layout_height="551.0dp"
 		android:id="@+id/linearLayout1">
+		<ScrollView
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/scrollView1" />
 		<TextView
 			android:text="Network status"
 			android:textStyle="bold"
@@ -141,4 +153,5 @@
 			android:layout_height="wrap_content"
 			android:id="@+id/MainInfo" />
 	</LinearLayout>
+	</ScrollView>
 </RelativeLayout>

@@ -1,16 +1,13 @@
 ﻿using Android.App;
 using Android.OS;
-using Android.Support.V7.App;
-using Android.Runtime;
 using Android.Widget;
-using Xamarin.Essentials;
 using System.Linq;
-using System;
+using Xamarin.Essentials;
 
 namespace Essentials
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity
+    public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -54,20 +51,20 @@ namespace Essentials
             switch (state)
             {
                 case BatteryState.Charging:
-                    batteryState.Text = "Charging";
+                    batteryState.Text = "Charging " + Battery.ChargeLevel * 100 + "%";
                     break;
 
                 case BatteryState.Full:
-                    batteryState.Text = "Full";
+                    batteryState.Text = "Full " + Battery.ChargeLevel * 100 + "%";
                     break;
 
                 case BatteryState.Discharging:
                 case BatteryState.NotCharging:
-                    batteryState.Text = "NotCharging";
+                    batteryState.Text = "NotCharging " + Battery.ChargeLevel * 100 + "%";
                     break;
 
                 case BatteryState.NotPresent:
-                    batteryState.Text = "NotPresent";
+                    batteryState.Text = "NotPresent " + Battery.ChargeLevel * 100 + "%";
                     break;
 
                 case BatteryState.Unknown:
